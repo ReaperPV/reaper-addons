@@ -7,7 +7,7 @@ export default function ToggleSounds() {
 
     register("command", () => {
         toggleSounds = !toggleSounds;
-        ChatLib.chat(`&4&lReaperAddons: &aSounds &r${!toggleSounds ? "&aEnabled" : "&cDisabled"}`);
+        ChatLib.chat(`&4&lReaperAddons: &r&4Sounds &r${!toggleSounds ? "&aEnabled" : "&cDisabled"}`);
     }).setName("togglesounds")
 
     register('soundPlay', (pos, name, vol, pitch, cat, event) => {

@@ -1,0 +1,8 @@
+{
+  "name": "Reaper Addons",
+  "creator": "Reaper_PV",
+  "description": "The best mod there ever was",
+  "version": "1.0.0",
+  "entry": "index.js",
+  "requires": ["requestV2", "Vigilance"]
+}

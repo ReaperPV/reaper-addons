@@ -90,16 +90,16 @@ export default function StonksReminder() {
 
         // Show warnings based on the current time
         if (currentTime < 30 && !warningsShown.early) {
-            warn("&3Auction is ending in a bit.");
+            warn("Auction is ending in a bit.");
             warningsShown.early = true;
         } else if (currentTime > 1200 && currentTime < 1300 && !warningsShown.soon) {
-            warn("&3Auction is ending soon.");
+            warn("Auction is ending soon.");
             warningsShown.soon = true;
         } else if (currentTime > 1800 && currentTime < 1900 && !warningsShown.verySoon) {
-            warn("&3Auction is ending very soon!");
+            warn("Auction is ending very soon!");
             warningsShown.verySoon = true;
         } else if (currentTime > 2200 && currentTime < 2400 && !warningsShown.now) {
-            warn("&3AUCTION IS ENDING NOW!!!!");
+            warn("AUCTION IS ENDING NOW!!!!");
             warningsShown.now = true;
 
             for (let i = 0; i < 5; i++) {
@@ -114,7 +114,7 @@ export default function StonksReminder() {
     }).setDelay(10);
 
     function warn (message) {
-        ChatLib.chat("&3&lStonks Reminder: " + message);
+        ChatLib.chat("&4&lReaperAddons: &r&4" + message);
         Client.showTitle(message, "You stupid idiot", 0.5, 50, 0.5);
         World.playSound(alertSound, 1, 1);
     }

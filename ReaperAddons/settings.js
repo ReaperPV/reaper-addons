@@ -46,8 +46,31 @@ class Settings {
       java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
     }
 
-  
-    
+  @SwitchProperty({
+    name: "Rift Time Reminder",
+    description: "Alerts you when you are low on rift time",
+    category: "General",
+    subcategory: "Rift",
+  })
+  riftTimeReminder = true;
+
+  @SliderProperty({
+    name: "Rift Time Reminder Threshold",
+    description: "How many minutes of rift time remaining for the reminder to trigger",
+    category: "General",
+    subcategory: "Rift",
+    min: 1,
+    max: 10,
+  })
+  riftTimeReminderThreshold = 5;
+
+  @SwitchProperty({
+    name: "Block Mining Abilities",
+    description: "Blocks mining abilities when on private island",
+    category: "General",
+  })
+  blockMiningAbilities = true;
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("General", "Some general settings...")

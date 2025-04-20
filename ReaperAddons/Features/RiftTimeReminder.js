@@ -47,5 +47,5 @@ export default function RiftTimeReminder() {
       World.playSound(Settings.alertSound || "random.anvil_land", 1, 1);
       alertShown = true;
     }
-  }).setDelay(10).unregister();
+  }).setDelay(5).unregister();
 }

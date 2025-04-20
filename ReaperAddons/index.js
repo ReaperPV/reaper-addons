@@ -5,14 +5,14 @@ import StupidCoatingParticles from "./Features/StupidCoatingParticles";
 import ToggleSounds from "./Features/ToggleSounds";
 import StonksReminder from "./Features/StonksReminder";
 import BlockPickobulus from "./Features/BlockPickobulus";
-// import RiftTimeReminder from "./Features/RiftTimeReminder";
+import RiftTimeReminder from "./Features/RiftTimeReminder";
 
 // Timers();
 ToggleSounds();
 StupidCoatingParticles();
 StonksReminder();
 BlockPickobulus();
-// RiftTimeReminder();
+RiftTimeReminder();
 
 
 register("command", () => Settings.openGUI()).setName("ra").setAliases('reaper', 'reaperaddons', 'rape');

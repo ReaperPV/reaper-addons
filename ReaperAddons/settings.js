@@ -47,22 +47,22 @@ class Settings {
   }
 
   @SwitchProperty({
-    name: "Rift Time Reminder",
+    name: "Rift Time Alert",
     description: "Alerts you when you are low on rift time",
     category: "General",
     subcategory: "Rift",
   })
-  riftTimeReminder = true;
+  riftTimeAlert = true;
 
   @SliderProperty({
-    name: "Rift Time Reminder Threshold",
-    description: "How many minutes of rift time remaining for the reminder to trigger",
+    name: "Rift Time Alert Threshold",
+    description: "How many minutes of rift time remaining for the alert to trigger",
     category: "General",
     subcategory: "Rift",
     min: 1,
     max: 10,
   })
-  riftTimeReminderThreshold = 5;
+  riftTimeAlertThreshold = 5;
 
   @SwitchProperty({
     name: "Block Mining Abilities",

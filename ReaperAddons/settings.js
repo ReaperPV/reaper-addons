@@ -42,9 +42,9 @@ class Settings {
       category: "General",
       placeholder: "Open"
     })
-    buttonAction() {
-      java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
-    }
+  buttonAction() {
+    java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
+  }
 
   @SwitchProperty({
     name: "Rift Time Reminder",

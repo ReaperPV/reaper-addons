@@ -115,7 +115,7 @@ export default function StonksReminder() {
 
     function warn (message) {
         ChatLib.chat("&4&lReaperAddons: &r&4" + message);
-        Client.showTitle("&4" + message, "You stupid idiot", 0.5, 50, 0.5);
+        Client.showTitle("&4" + message, "", 0.5, 50, 0.5);
         World.playSound(Settings.alertSound ? Settings.alertSound : "random.anvil_land", 1, 1);
     }
     

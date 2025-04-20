@@ -3,8 +3,6 @@ import request from "../../requestV2";
 
 export default function StonksReminder() {
     let diaz = false;
-    const alertSound = Settings.alertSound ? Settings.alertSound : "random.anvil_land";
-    const volume = Settings.volume ? Settings.volume : 5;
 
     // Flags to track if warnings have been shown
     let warningsShown = {
@@ -19,6 +17,7 @@ export default function StonksReminder() {
     }).setDelay(1800);
 
     function checkDiaz() {
+        if (!Settings.stonksReminder) return;
         request({
             url: 'https://api.hypixel.net/v2/resources/skyblock/election',
             json: true
@@ -36,6 +35,7 @@ export default function StonksReminder() {
     checkDiaz(); //initial check
 
     register("step", () => {
+        if(!Settings.stonksReminder) return;
         if (!diaz) return;
         let scoreboard = Scoreboard.getLines();
         if (!scoreboard.length) return;
@@ -104,8 +104,8 @@ export default function StonksReminder() {
 
             for (let i = 0; i < 5; i++) {
                 setTimeout(() => {
-                    for (let i = 0; i < volume; i++) {
-                        World.playSound(alertSound, 1, 1);
+                    for (let i = 0; i < (Settings.volume ? Settings.volume : 5); i++) {
+                        World.playSound(Settings.alertSound ? Settings.alertSound : "random.anvil_land", 1, 1);
                     }
                 }, i * 200);
             }        
@@ -115,8 +115,8 @@ export default function StonksReminder() {
 
     function warn (message) {
         ChatLib.chat("&4&lReaperAddons: &r&4" + message);
-        Client.showTitle(message, "You stupid idiot", 0.5, 50, 0.5);
-        World.playSound(alertSound, 1, 1);
+        Client.showTitle("&4" + message, "You stupid idiot", 0.5, 50, 0.5);
+        World.playSound(Settings.alertSound ? Settings.alertSound : "random.anvil_land", 1, 1);
     }
     
 };

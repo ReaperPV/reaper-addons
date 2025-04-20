@@ -4,16 +4,14 @@ import Settings from "./settings";
 import StupidCoatingParticles from "./Features/StupidCoatingParticles";
 import ToggleSounds from "./Features/ToggleSounds";
 import StonksReminder from "./Features/StonksReminder";
+// import RiftTimeReminder from "./Features/RiftTimeReminder";
 
 // Timers();
 ToggleSounds();
+StupidCoatingParticles();
+StonksReminder();
+BlockPickobulus();
+// RiftTimeReminder();
 
-if (Settings.removeCoatingParticles) {
-    StupidCoatingParticles();
-}
 
-if (Settings.stonksReminder) {
-    StonksReminder();
-}
-
-register("command", () => Settings.openGUI()).setName("ra").setAliases('reaper', 'reaperaddons');
+register("command", () => Settings.openGUI()).setName("ra").setAliases('reaper', 'reaperaddons', 'rape');

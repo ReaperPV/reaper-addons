@@ -35,7 +35,7 @@ export default function RunSplits() {
     register("worldUnload", cleanUp)
 
     // Time is formatted in the form m:ss
-    const formatTime = (timeMs, msDigits=3) => {
+    const formatTime = (timeMs, msDigits=2) => {
         const ms = `${timeMs % 1000}`
         const msStr = "0".repeat(3 - ms.length) + ms
         const sec = Math.floor(timeMs / 1000)

@@ -28,7 +28,7 @@ const splitInfo = {
         },
         {
             name: "&4Boss",
-            start: /^\[BOSS\] Bonzo: Gratz for making it this far, but I'm basically unbeatable\.$/,
+            start: /^\[BOSS\] Bonzo: Gratz for making it this far, but I'm basically unbeatable\.$/
         }
     ],
     F2: [

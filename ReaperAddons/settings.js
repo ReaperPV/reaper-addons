@@ -63,6 +63,31 @@ class Settings {
       ChatLib.command("moverunsplits", true)
     };
 
+    @SwitchProperty({
+      name: "Rift Time Alert",
+      description: "Alerts you when you are low on rift time",
+      category: "General",
+      subcategory: "Rift",
+    })
+    riftTimeAlert = true;
+
+    @SliderProperty({
+      name: "Rift Time Alert Threshold",
+      description: "How many minutes of rift time remaining for the alert to trigger",
+      category: "General",
+      subcategory: "Rift",
+      min: 1,
+      max: 10,
+    })
+    riftTimeAlertThreshold = 5;
+
+    @SwitchProperty({
+      name: "Block Mining Abilities",
+      description: "Blocks mining abilities when on private island",
+      category: "General",
+    })
+    blockMiningAbilities = true;
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("General", "Some general settings...")

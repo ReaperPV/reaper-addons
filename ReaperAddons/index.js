@@ -4,6 +4,7 @@ import Settings from "./settings";
 import StupidCoatingParticles from "./Features/StupidCoatingParticles";
 import ToggleSounds from "./Features/ToggleSounds";
 import StonksReminder from "./Features/StonksReminder";
+import RunSplits from "./Features/RunSplits";
 
 // Timers();
 ToggleSounds();
@@ -17,3 +18,5 @@ if (Settings.stonksReminder) {
 }
 
 register("command", () => Settings.openGUI()).setName("ra").setAliases('reaper', 'reaperaddons');
+
+RunSplits(); 

@@ -42,12 +42,27 @@ class Settings {
       category: "General",
       placeholder: "Open"
     })
-  buttonAction() {
-    java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
-  }
-
+    buttonAction() {
+      java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
+    }
   
-    
+    @SwitchProperty({
+      name: "Run Splits",
+      description: "Shows the Run Splits for the current run on screen. Will also keep track of your fastest splits and show how far away you are from them eg (+2.4s)",
+      category: "Dungeons",
+    })
+    runSplits = false;
+  
+    @ButtonProperty({
+      name: "Move",
+      description: "Move the run splits overlay",
+      category: "Dungeons",
+      placeholder: "Move"
+    })
+     MoveRunSplitsGui() {
+      ChatLib.command("moverunsplits", true)
+    };
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("General", "Some general settings...")

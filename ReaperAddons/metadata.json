@@ -4,5 +4,5 @@
   "description": "The best mod there ever was",
   "version": "1.0.0",
   "entry": "index.js",
-  "requires": ["requestV2", "Vigilance"]
+  "requires": ["requestV2", "Vigilance", "BloomCore", "PogData"]
 }

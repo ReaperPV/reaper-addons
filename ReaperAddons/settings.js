@@ -42,34 +42,51 @@ class Settings {
       category: "General",
       placeholder: "Open"
     })
-  buttonAction() {
-    java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
-  }
+    buttonAction() {
+      java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
+    }
+  
+    @SwitchProperty({
+      name: "Run Splits",
+      description: "Shows the Run Splits for the current run on screen. Will also keep track of your fastest splits and show how far away you are from them eg (+2.4s)",
+      category: "Dungeons",
+    })
+    runSplits = false;
+  
+    @ButtonProperty({
+      name: "Move",
+      description: "Move the run splits overlay",
+      category: "Dungeons",
+      placeholder: "Move"
+    })
+     MoveRunSplitsGui() {
+      ChatLib.command("moverunsplits", true)
+    };
 
-  @SwitchProperty({
-    name: "Rift Time Alert",
-    description: "Alerts you when you are low on rift time",
-    category: "General",
-    subcategory: "Rift",
-  })
-  riftTimeAlert = true;
+    @SwitchProperty({
+      name: "Rift Time Alert",
+      description: "Alerts you when you are low on rift time",
+      category: "General",
+      subcategory: "Rift",
+    })
+    riftTimeAlert = true;
 
-  @SliderProperty({
-    name: "Rift Time Alert Threshold",
-    description: "How many minutes of rift time remaining for the alert to trigger",
-    category: "General",
-    subcategory: "Rift",
-    min: 1,
-    max: 10,
-  })
-  riftTimeAlertThreshold = 5;
+    @SliderProperty({
+      name: "Rift Time Alert Threshold",
+      description: "How many minutes of rift time remaining for the alert to trigger",
+      category: "General",
+      subcategory: "Rift",
+      min: 1,
+      max: 10,
+    })
+    riftTimeAlertThreshold = 5;
 
-  @SwitchProperty({
-    name: "Block Mining Abilities",
-    description: "Blocks mining abilities when on private island",
-    category: "General",
-  })
-  blockMiningAbilities = true;
+    @SwitchProperty({
+      name: "Block Mining Abilities",
+      description: "Blocks mining abilities when on private island",
+      category: "General",
+    })
+    blockMiningAbilities = true;
 
     constructor() {
         this.initialize(this);

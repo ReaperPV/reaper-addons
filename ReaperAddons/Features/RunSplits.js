@@ -1,4 +1,4 @@
-//Massive credit to Bloom this is literally his code (just changed a little bit)
+// Massive credit to Bloom this is literally his code (just changed a little bit)
 import Dungeon from "../../BloomCore/dungeons/Dungeon";
 import { onChatPacket } from "../../BloomCore/utils/Events";
 import ScalableGui from "../../BloomCore/utils/ScalableGui";
@@ -6,6 +6,7 @@ import PogObject from "../../PogData";
 import Settings from "../settings";
 import splitInfo from "../data/floorSplits";
 import { data, prefix } from "../utils/Utils";
+
 export default function RunSplits() {
     // floorSplits.js:
     // If a master mode floor is not present, the splits for the normal floor version will be used and still saved as Master Mode
@@ -24,7 +25,7 @@ export default function RunSplits() {
     let currentFloor = null
 
     // Unregister everything, reset variables
-    const cleanUp = () => {
+    function cleanUp() {
         while (triggers.length) {
             triggers.pop().unregister()
         }
@@ -35,7 +36,7 @@ export default function RunSplits() {
     register("worldUnload", cleanUp)
 
     // Time is formatted in the form m:ss
-    const formatTime = (timeMs, msDigits=2) => {
+    function formatTime (timeMs, msDigits=2) {
         const ms = `${timeMs % 1000}`
         const msStr = "0".repeat(3 - ms.length) + ms
         const sec = Math.floor(timeMs / 1000)
@@ -43,7 +44,7 @@ export default function RunSplits() {
         return `${sec}.${msStr.slice(0, msDigits)}`
     }
 
-    const saveBestSplit = (floor, segmentName, timeMs) => {
+    function saveBestSplit(floor, segmentName, timeMs) {
         const unformatted = segmentName.removeFormatting()
 
         // Create if needed
@@ -55,7 +56,7 @@ export default function RunSplits() {
         bestSplits.save()
     }
 
-    const getBestSplit = (floor, segmentName) => {
+    function getBestSplit(floor, segmentName) {
         const unformatted = segmentName.removeFormatting()
 
         if (!(floor in bestSplits) || !(unformatted in bestSplits[floor])) return null
@@ -64,7 +65,7 @@ export default function RunSplits() {
     }
 
     // Load the splits for the given floor, start listening for chat messages
-    const registerSplits = (floor) => {
+    function registerSplits(floor) {
         let floorKey = floor
 
         if (!(floorKey in splitInfo)) {
@@ -143,7 +144,7 @@ export default function RunSplits() {
     }
 
     // Renderer hell
-    const renderGui = () => {
+    function renderGui() {
 
         const splitTimes = {} // "splitName": "timeElapsedStr"
 

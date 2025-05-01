@@ -23,7 +23,7 @@ export default function StonksReminder() {
             json: true
         })
         .then((response) => {
-            if (response.mayor.perks.some(perk => perk.name === "Stock Exchange") || response.mayor.minister.perk.name === "Stock Exchange") {
+            if (response.mayor.perks.some(perk => perk.name === "Stock Exchange") || (response.mayor.minister && response.mayor.minister.perk.name === "Stock Exchange")) {
                 diaz = true;
             } else {
                 diaz = false;
@@ -31,7 +31,7 @@ export default function StonksReminder() {
         })
         .catch((err) => console.error(`StonksReminder: ${err.cause ?? err}`));
     }
-
+    
     checkDiaz(); //initial check
 
     register("step", () => {
@@ -120,4 +120,4 @@ export default function StonksReminder() {
     }
     
 };
- 
+

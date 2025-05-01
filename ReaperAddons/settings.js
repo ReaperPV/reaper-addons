@@ -45,7 +45,15 @@ class Settings {
     buttonAction() {
       java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments"));
     }
-  
+
+    @SwitchProperty({
+      name: "Potion Bag",
+      description: "Automatically opens your potion bag when you enter a dungeon.",
+      category: "Dungeons",
+      subcategory: "Potion Bag"
+    })
+    potionBag = true;
+    
     @SwitchProperty({
       name: "Run Splits",
       description: "Shows the Run Splits for the current run on screen. Will also keep track of your fastest splits and show how far away you are from them eg (+2.4s)",
